@@ -1,5 +1,4 @@
 from django.shortcuts import render
-
 from .models import Profile
 
 
@@ -12,5 +11,6 @@ def homepage(request):
         'profile':profile
 
     }
+
 
     return render(request, 'index.html', context)
