@@ -13,4 +13,4 @@ def homepage(request):
     }
 
 
-    return render(request, 'index.html', context)
+    return render(request, 'profile/index.html', context)
