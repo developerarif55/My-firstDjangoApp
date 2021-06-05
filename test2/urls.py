@@ -7,8 +7,11 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('myapp.urls', namespace='myapp')),
-    path('album/', include('album.urls', namespace='album'))
+   
+    path('', include('blog.urls', namespace='blog')),
+    path('myapp/', include('myapp.urls', namespace='myapp')),
+    path('album/', include('album.urls', namespace='album')),
+    path('summernote/', include('django_summernote.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

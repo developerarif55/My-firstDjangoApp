@@ -31,7 +31,7 @@ SECRET_KEY = 'gz41lo)c=0$u@1#pgfqtyca6o!^f0t+ch@7*#g+63u4*u49-#7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*'] 
 
 
 # Application definition
@@ -45,9 +45,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
     'album',
-    'storages'
+    'blog',
+    'storages',
+    'taggit'
 ]
-
+INSTALLED_APPS += ('django_summernote', )
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -138,8 +141,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
 
-AWS_ACCESS_KEY_ID = 'AKIARVGPJVYVP7XN2E5V'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = 'AKIARVGPJVYVLNFAAMTG'
+AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'nasim.secpstorage'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
@@ -147,4 +150,5 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 
+DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
 django_heroku.settings(locals())
